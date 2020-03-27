@@ -1,0 +1,10 @@
+#img-logo {
+    width: 70%;
+    padding: 3%;
+}
+
+.price {
+    font-weight: bold !important;
+    text-align: left;
+    font-size: 90% !important;
+}

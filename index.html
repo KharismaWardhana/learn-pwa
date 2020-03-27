@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arlite PWA</title>
+    <meta name="description" content="Arlite_PWA">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="./manifest.json">
+    <!-- CDN Font Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <meta name="theme-color" content="#04A9EF">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- revisi add icon for IOS devices -->
+    <meta name="apple-touch-icon" href='./assets/icons/icon-512x512.png'>
+
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-2048-2732.jpg"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-1668-2388.jpg"
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-1668-2224.jpg"
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-1536-2048.jpg"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-1242-2688.jpg"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-1125-2436.jpg"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-828-1792.jpg"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-1242-2208.jpg"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-750-1334.jpg"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./assets/splash/apple-splash-640-1136.jpg"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+
+</head>
+
+<body>
+    <!-- Navigasi -->
+    <nav class="indigo darken-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo" id="logo-container">
+                <img src="./assets/images/Logo.svg" id="img-logo">
+            </a>
+            <a href="#" class="sidenav-trigger right" data-target="nav-mobile">
+                <i class="material-icons prefix">menu</i>
+            </a>
+
+            <ul class="topnav right hide-on-med-and-down"></ul>
+            <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+    </nav>
+    <!-- Akhir Navigasi -->
+
+    <!-- Dynamic content -->
+    <div class="container" id="body-content"></div>
+
+    <script src="./libs/materialize/js/materialize.min.js"></script>
+    <script src="./js/nav.js"></script>
+    <script>
+        // REGISTER SERVICE WORKER
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(function () {
+                        console.log('Pendaftaran ServiceWorker berhasil');
+                    })
+                    .catch(function () {
+                        console.log('Pendaftaran ServiceWorker gagal');
+                    });
+            })
+        } else {
+            console.log("ServiceWorker belum didukung browser ini.")
+        }
+    </script>
+
+
+    <footer class="page-footer indigo darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">
+                        You can use rows and columns here to organize your footer
+                        content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">Arlite</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
